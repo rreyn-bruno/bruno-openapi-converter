@@ -1,4 +1,5 @@
-const { openApiToBruno } = require('@usebruno/converters');
+// Use enhanced converter with improved example extraction
+const { openApiToBruno } = require('./enhanced-converters/cjs/index.js');
 const { stringifyRequest, stringifyCollection, stringifyFolder } = require('@usebruno/filestore');
 const fs = require('fs-extra');
 const path = require('path');
