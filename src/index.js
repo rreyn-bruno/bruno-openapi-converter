@@ -1,6 +1,7 @@
 // Use enhanced converter with improved example extraction
 const { openApiToBruno } = require('./enhanced-converters/cjs/index.js');
-const { stringifyRequest, stringifyCollection, stringifyFolder } = require('@usebruno/filestore');
+const { stringifyRequest: vendoredStringifyRequest } = require('./vendored-filestore');
+const { stringifyCollection, stringifyFolder } = require('@usebruno/filestore');
 const fs = require('fs-extra');
 const path = require('path');
 const yaml = require('js-yaml');
@@ -35,7 +36,7 @@ async function writeItems(items, currentPath) {
         // Write request file
         const filename = sanitizeName(`${item.name}.bru`);
         const filePath = path.join(currentPath, filename);
-        const content = stringifyRequest(item);
+        const content = vendoredStringifyRequest(item);
         await fs.writeFile(filePath, content, 'utf8');
         console.log(`  ✓ Created request: ${filename}`);
       } else if (item.type === 'folder') {
@@ -110,7 +111,7 @@ async function convertOpenApiToFileStructure(openApiSpec, outputDir, options = {
 
     // Step 2: Convert OpenAPI to Bruno JSON format
     console.log('🔄 Converting to Bruno format...');
-    const brunoJson = openApiToBruno(openApiData);
+    const brunoJson = openApiToBruno(openApiData, { groupBy: 'path' });
     console.log(`✓ Converted to Bruno collection: ${brunoJson.name}\n`);
 
     // Step 3: Create output directory
