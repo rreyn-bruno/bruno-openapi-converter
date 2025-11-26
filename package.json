@@ -17,7 +17,7 @@
     "converter",
     "bru"
   ],
-  "author": "",
+  "author": "rreyn-bruno",
   "license": "MIT",
   "dependencies": {
     "@usebruno/converters": "^0.1.0",
@@ -36,6 +36,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/bruno-openapi-converter.git"
-  }
+    "url": "https://github.com/rreyn-bruno/bruno-openapi-converter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rreyn-bruno/bruno-openapi-converter/issues"
+  },
+  "homepage": "https://github.com/rreyn-bruno/bruno-openapi-converter#readme",
+  "files": [
+    "bin/",
+    "src/",
+    "README.md",
+    "LICENSE",
+    "EXAMPLES_SUPPORT.md"
+  ]
 }

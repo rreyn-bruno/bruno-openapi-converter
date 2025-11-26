@@ -1,0 +1,39 @@
+# Test files
+test/
+tests/
+*.test.js
+*.spec.js
+test-output/
+*.test.bru
+
+# Development files
+.git/
+.github/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Documentation (keep README.md and EXAMPLES_SUPPORT.md)
+PUBLISHING.md
+
+# CI/CD
+.travis.yml
+.gitlab-ci.yml
+circle.yml
+
+# Misc
+.editorconfig
+.eslintrc*
+.prettierrc*
+coverage/
+.nyc_output/
+
